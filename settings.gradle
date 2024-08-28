@@ -17,6 +17,9 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
     }
+//    dependencies {
+//        classpath 'com.android.tools.build:gradle:8.4.2' // Change this to 8.4.2 :- classpath 'com.android.tools.build:gradle:8.4.2'
+//    }
 }
 
 rootProject.name = "HostelHomes"
