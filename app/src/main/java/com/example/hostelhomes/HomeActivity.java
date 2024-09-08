@@ -74,8 +74,8 @@ public class HomeActivity extends AppCompatActivity {
         requestsSection.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent i1 = new Intent(HomeActivity.this, Leave.class);
-//                startActivity(i1);
+                Intent i1 = new Intent(HomeActivity.this, LeaveRequestActivity.class);
+                startActivity(i1);
             }
         });
 

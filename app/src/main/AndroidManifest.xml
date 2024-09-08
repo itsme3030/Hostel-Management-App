@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HostelHomes"
         tools:targetApi="31">
+        <activity android:name=".LeaveRequestActivity" android:exported="false" />
         <activity
             android:name=".ConfidentialComplaint"
             android:exported="false" />

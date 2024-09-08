@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#f1f1f1">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter Duration"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp"
+        android:layout_gravity="center_horizontal"/>
+
+    <!-- From Date -->
+    <TextView
+        android:id="@+id/fromDateText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="From Date"
+        android:textSize="18sp"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:id="@+id/fromDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:background="@drawable/section_bg"
+        android:text="Select From Date"
+        android:textSize="16sp"
+        android:gravity="center_vertical"/>
+
+    <!-- To Date -->
+    <TextView
+        android:id="@+id/toDateText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="To Date"
+        android:textSize="18sp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:id="@+id/toDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:background="@drawable/section_bg"
+        android:text="Select To Date"
+        android:textSize="16sp"
+        android:gravity="center_vertical"/>
+
+    <!-- Reason -->
+    <TextView
+        android:id="@+id/Reason"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reason"
+        android:textSize="18sp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"/>
+
+    <EditText
+        android:id="@+id/ReasonText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:background="@drawable/section_bg"
+        android:hint="Write your reason..."
+        android:textSize="16sp"
+        android:gravity="center_vertical"/>
+
+    <!-- Submit Button -->
+    <Button
+        android:id="@+id/submitLeaveRequest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Submit"
+        android:background="#4CAF50"
+        android:textColor="#FFFFFF"/>
+</LinearLayout>
