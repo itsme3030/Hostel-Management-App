@@ -1,0 +1,58 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#f5f5f5">
+
+    <!-- Maintenance Department Button -->
+    <Button
+        android:id="@+id/btn_maintenance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Maintenance Department"
+        android:textSize="18sp"
+        android:padding="16dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#009688"
+        android:elevation="4dp"
+        android:layout_alignParentTop="true" />
+
+    <!-- Food Department Button -->
+    <Button
+        android:id="@+id/btn_food"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Food Department"
+        android:textSize="18sp"
+        android:padding="16dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#4caf50"
+        android:elevation="4dp"
+        android:layout_below="@id/btn_maintenance" />
+
+    <!-- Confidential Report Button -->
+    <Button
+        android:id="@+id/btn_confidential"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Confidential Report"
+        android:textSize="18sp"
+        android:padding="16dp"
+        android:backgroundTint="#2196f3"
+        android:elevation="4dp"
+        android:layout_below="@id/btn_food" />
+
+    <!-- Back Button -->
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="16dp"
+        android:background="#F44336"
+        android:padding="12dp"
+        android:textSize="22sp"
+        android:text="Back"
+        android:textColor="#FFFFFF" />
+
+</RelativeLayout>

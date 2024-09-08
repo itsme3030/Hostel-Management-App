@@ -20,9 +20,9 @@
             android:gravity="center_vertical">
 
             <ImageView
-                android:layout_width="64dp"
-                android:layout_height="64dp"
-                android:src="@drawable/ic_user_avatar"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/hostellogo"
                 android:layout_marginEnd="16dp" />
 
             <LinearLayout
@@ -36,7 +36,7 @@
                     android:layout_height="wrap_content"
                     android:text="Hello..."
                     android:textColor="@android:color/white"
-                    android:textSize="18sp"
+                    android:textSize="24sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -45,9 +45,10 @@
                     android:layout_height="wrap_content"
                     android:text="2024-25"
                     android:textColor="@android:color/white"
-                    android:textSize="16sp" />
+                    android:textSize="24sp" />
             </LinearLayout>
         </LinearLayout>
+
 
         <!-- Section Cards -->
         <LinearLayout
@@ -58,156 +59,190 @@
 
             <!-- Attendance Section -->
             <LinearLayout
-                android:id="@+id/attendanceSection"
+                android:id="@+id/rulesSection"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="110dp"
                 android:layout_marginBottom="8dp"
                 android:background="@drawable/section_bg"
                 android:orientation="horizontal"
                 android:padding="16dp"
                 android:gravity="center">
 
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/rules"
+                    android:layout_marginEnd="16dp" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Attendance"
+                    android:text="Rules"
                     android:textColor="@android:color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:fontFamily="consolas"
+                    android:letterSpacing="0.05" />
             </LinearLayout>
 
             <!-- Requests Section -->
             <LinearLayout
-                android:id="@+id/requestsSection"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_marginBottom="8dp"
-                android:background="@drawable/section_bg"
-                android:orientation="horizontal"
-                android:padding="16dp"
-                android:gravity="center">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Requests"
-                    android:textColor="@android:color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-            <!-- Food Schedule Section -->
-            <LinearLayout
                 android:id="@+id/foodScheduleSection"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="110dp"
                 android:layout_marginBottom="8dp"
                 android:background="@drawable/section_bg"
                 android:orientation="horizontal"
                 android:padding="16dp"
                 android:gravity="center">
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/foodschedule"
+                    android:layout_marginEnd="16dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Food Schedule"
                     android:textColor="@android:color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:fontFamily="consolas"
+                    android:letterSpacing="0.05" />
             </LinearLayout>
 
-            <!-- Complaint Section -->
+            <!-- Food Schedule Section -->
             <LinearLayout
-                android:id="@+id/complaintSection"
+                android:id="@+id/foodAttendanceSection"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="110dp"
                 android:layout_marginBottom="8dp"
                 android:background="@drawable/section_bg"
                 android:orientation="horizontal"
                 android:padding="16dp"
                 android:gravity="center">
+
+                <ImageView
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:src="@drawable/foodattendance"
+                    android:layout_marginEnd="16dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Food Attendance"
+                    android:textColor="@android:color/black"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:fontFamily="consolas"
+                    android:letterSpacing="0.05" />
+            </LinearLayout>
+
+            <!-- Complaint Section -->
+            <LinearLayout
+                android:id="@+id/requestSection"
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/section_bg"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/request"
+                    android:layout_marginEnd="16dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Leave Request"
+                    android:textColor="@android:color/black"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:fontFamily="consolas"
+                    android:letterSpacing="0.05" />
+            </LinearLayout>
+
+            <!-- Event Section -->
+            <LinearLayout
+                android:id="@+id/complaintSection"
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/section_bg"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:src="@drawable/complaint"
+                    android:layout_marginEnd="16dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Complaint"
                     android:textColor="@android:color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-            <!-- Event Section -->
-            <LinearLayout
-                android:id="@+id/eventSection"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_marginBottom="8dp"
-                android:background="@drawable/section_bg"
-                android:orientation="horizontal"
-                android:padding="16dp"
-                android:gravity="center">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Event"
-                    android:textColor="@android:color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:fontFamily="consolas"
+                    android:letterSpacing="0.05" />
             </LinearLayout>
 
             <!-- Rules Section -->
-            <LinearLayout
-                android:id="@+id/rulesSection"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_marginBottom="8dp"
-                android:background="@drawable/section_bg"
-                android:orientation="horizontal"
-                android:padding="16dp"
-                android:gravity="center">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Rules"
-                    android:textColor="@android:color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/logoutsection"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:background="@drawable/section_bg"
-                android:orientation="vertical"
-                android:padding="16dp">
+<!--            <LinearLayout-->
+<!--                android:id="@+id/logoutsection"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginBottom="8dp"-->
+<!--                android:background="@drawable/section_bg"-->
+<!--                android:orientation="vertical"-->
+<!--                android:padding="16dp">-->
 
-                <TextView
-                    android:id="@+id/tvwelcometxt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:paddingBottom="32dp"
-                    android:text="Hello, User!"
-                    android:textColor="#000000"
-                    android:textSize="24sp"
-                    android:textStyle="bold" />
 
-                <Button
-                    android:id="@+id/logoutbtn"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="32dp"
-                    android:background="#F44336"
-                    android:padding="12dp"
-                    android:text="Logout"
-                    android:textColor="#FFFFFF"
-                    android:textSize="18sp" />
-            </LinearLayout>
+
+<!--                <Button-->
+<!--                    android:id="@+id/logoutbtn"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="32dp"-->
+<!--                    android:background="#F44336"-->
+<!--                    android:padding="12dp"-->
+<!--                    android:text="Logout"-->
+<!--                    android:textColor="#FFFFFF"-->
+<!--                    android:textSize="22sp" />-->
+<!--            </LinearLayout>-->
 
         </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/logoutsection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="6dp"
+          > <!-- This places it at the bottom -->
+
+            <Button
+                android:id="@+id/logoutbtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="#F44336"
+                android:padding="12dp"
+                android:text="Logout"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp" />
+        </LinearLayout>
+
     </LinearLayout>
 </ScrollView>

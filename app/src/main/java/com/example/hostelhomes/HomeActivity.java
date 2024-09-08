@@ -34,15 +34,15 @@ public class HomeActivity extends AppCompatActivity {
         String uname = intent.getStringExtra("uname");
 
         logoutbtn = findViewById(R.id.logoutbtn);
-        tvwelcometxt = findViewById(R.id.tvwelcometxt);
+//        tvwelcometxt = findViewById(R.id.tvwelcometxt);
         tvUserName = findViewById(R.id.tvUserName);
 
         // Initialize UI elements
-        attendanceSection = findViewById(R.id.attendanceSection);
-        requestsSection = findViewById(R.id.requestsSection);
+        attendanceSection = findViewById(R.id.foodAttendanceSection);
+        requestsSection = findViewById(R.id.requestSection);
         foodScheduleSection = findViewById(R.id.foodScheduleSection);
         complaintSection = findViewById(R.id.complaintSection);
-        eventSection = findViewById(R.id.eventSection);
+//        eventSection = findViewById(R.id.);
         rulesSection = findViewById(R.id.rulesSection);
 
         //set UserName
@@ -100,7 +100,7 @@ public class HomeActivity extends AppCompatActivity {
 
 
         // Set the welcome message with the username
-        tvwelcometxt.setText("Welcome " + uname);
+//        tvwelcometxt.setText("Welcome " + uname);
 
         // Set the logout button functionality
         logoutbtn.setOnClickListener(new View.OnClickListener() {
@@ -119,6 +119,30 @@ public class HomeActivity extends AppCompatActivity {
                 hometomain.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(hometomain);
                 finish();
+            }
+        });
+
+        rulesSection.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i1 = new Intent(HomeActivity.this, RulesActivity.class);
+                startActivity(i1);
+            }
+        });
+
+        foodScheduleSection.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i1 = new Intent(HomeActivity.this, FoodSchedule.class);
+                startActivity(i1);
+            }
+        });
+
+        complaintSection.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i1 = new Intent(HomeActivity.this, Complaint.class);
+                startActivity(i1);
             }
         });
     }

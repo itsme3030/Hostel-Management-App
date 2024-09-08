@@ -1,0 +1,29 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#f5f5f5">
+
+    <EditText
+        android:id="@+id/editText_confidential_complaint"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:hint='"Your insights can drive improvement. Speak freely, your confidentiality is protected."'
+        android:textSize="20sp"
+        android:padding="16dp"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/btn_send_confidential_complaint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="#F44336"
+        android:padding="12dp"
+        android:textSize="22sp"
+        android:textColor="#FFFFFF"
+        android:text="Send" />
+
+</LinearLayout>

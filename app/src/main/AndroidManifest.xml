@@ -13,17 +13,38 @@
         android:theme="@style/Theme.HostelHomes"
         tools:targetApi="31">
         <activity
-            android:name=".HomeActivity"
+            android:name=".ConfidentialComplaint"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".FoodComplaint"
+            android:exported="false" />
+        <activity
+            android:name=".MaintainanceComplaint"
+            android:exported="false" />
+        <activity
+            android:name=".Complaint"
+            android:exported="false" />
+        <activity
+            android:name=".FoodSchedule"
+            android:exported="false" />
+        <activity
+            android:name=".RulesActivity"
+            android:exported="false" /> <!-- SplashActivity should be correctly formatted -->
+        <activity
+            android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
+        </activity> <!-- HomeActivity definition -->
+        <activity
+            android:name=".HomeActivity"
+            android:exported="false" /> <!-- MainActivity without launcher intent -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

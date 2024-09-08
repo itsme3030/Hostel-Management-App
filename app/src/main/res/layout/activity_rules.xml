@@ -1,0 +1,141 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- ScrollView to hold the rules -->
+    <ScrollView
+        android:id="@+id/rulesScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Rules Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hostel Rules"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:layout_gravity="top"
+                android:paddingBottom="20dp"/>
+
+            <!-- Rule 1 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1. Maintain cleanliness in rooms and common areas."
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:padding="8dp"/>
+
+            <!-- Rule 2 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2. No loud noise after 10:00 PM."
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:padding="8dp"/>
+
+            <!-- Rule 3 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3. Visitors are allowed only in common areas."
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:padding="8dp"/>
+
+            <!-- Rule 4 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4. No smoking or alcohol inside the hostel."
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:padding="8dp"/>
+
+            <!-- Rule 5 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5. Adhere to hostel curfew timings."
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:padding="8dp"/>
+
+            <!-- Rule 6 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="6. Respect other students' privacy and belongings."
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:padding="8dp"/>
+
+            <!-- Rule 7 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="7. Report any maintenance issues immediately."
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:padding="8dp"/>
+
+            <!-- Rule 8 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="8. No illegal activities will be tolerated."
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:padding="8dp"/>
+
+            <!-- Rule 9 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="9. Keep valuables secured; the hostel is not responsible for losses."
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:padding="8dp"/>
+
+            <!-- Rule 10 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10. Follow all safety protocols during emergencies."
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:padding="8dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Back Button Fixed at the Bottom -->
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="#F44336"
+        android:layout_alignParentBottom="true"
+        android:padding="12dp"
+        android:text="Back"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp" />
+
+<!--    <Button-->
+<!--        android:id="@+id/backButton"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Back"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginBottom="16dp"/>-->
+</RelativeLayout>
