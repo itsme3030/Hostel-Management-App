@@ -1,7 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:padding="5dp">
 
     <!-- ScrollView to hold the rules -->
     <ScrollView
@@ -22,7 +22,7 @@
                 android:textSize="40sp"
                 android:textStyle="bold"
                 android:layout_gravity="top"
-                android:paddingBottom="20dp"/>
+                android:paddingBottom="15dp"/>
 
             <!-- Rule 1 -->
             <TextView
@@ -124,18 +124,10 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:background="#F44336"
-        android:layout_alignParentBottom="true"
-        android:padding="12dp"
+        android:layout_below="@+id/rulesScrollView"
+        android:padding="5dp"
         android:text="Back"
         android:textColor="#FFFFFF"
         android:textSize="22sp" />
 
-<!--    <Button-->
-<!--        android:id="@+id/backButton"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Back"-->
-<!--        android:layout_alignParentBottom="true"-->
-<!--        android:layout_centerHorizontal="true"-->
-<!--        android:layout_marginBottom="16dp"/>-->
 </RelativeLayout>

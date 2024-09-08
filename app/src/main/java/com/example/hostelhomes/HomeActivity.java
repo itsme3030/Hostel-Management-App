@@ -18,7 +18,7 @@ public class HomeActivity extends AppCompatActivity {
     SharedPreferences sharedPreferences;
     private static final String PREFS_NAME = "LoginPrefs"; // Name for SharedPreferences
 
-    private LinearLayout attendanceSection, requestsSection, foodScheduleSection, complaintSection, eventSection, rulesSection;
+    private LinearLayout rulesSection, foodScheduleSection, attendanceSection, requestsSection, complaintSection;
 
 
     @Override
@@ -34,94 +34,19 @@ public class HomeActivity extends AppCompatActivity {
         String uname = intent.getStringExtra("uname");
 
         logoutbtn = findViewById(R.id.logoutbtn);
-//        tvwelcometxt = findViewById(R.id.tvwelcometxt);
         tvUserName = findViewById(R.id.tvUserName);
-
-        // Initialize UI elements
-        attendanceSection = findViewById(R.id.foodAttendanceSection);
-        requestsSection = findViewById(R.id.requestSection);
-        foodScheduleSection = findViewById(R.id.foodScheduleSection);
-        complaintSection = findViewById(R.id.complaintSection);
-//        eventSection = findViewById(R.id.);
-        rulesSection = findViewById(R.id.rulesSection);
 
         //set UserName
         tvUserName.setText("Welcome " + uname);
 
+        // Initialize UI elements
+        rulesSection = findViewById(R.id.rulesSection);
+        foodScheduleSection = findViewById(R.id.foodScheduleSection);
+        attendanceSection = findViewById(R.id.foodAttendanceSection);
+        requestsSection = findViewById(R.id.requestSection);
+        complaintSection = findViewById(R.id.complaintSection);
+
         // Set click listeners
-        attendanceSection.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                Intent intent = new Intent(HomeActivity.this, AttendanceActivity.class);
-//                startActivity(intent);
-            }
-        });
-
-        requestsSection.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                Intent intent = new Intent(HomeActivity.this, RequestsActivity.class);
-//                startActivity(intent);
-            }
-        });
-
-//        foodScheduleSection.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(Home.this, FoodScheduleActivity.class);
-//                startActivity(intent);
-//            }
-//        });
-//
-//        complaintSection.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(Home.this, ComplaintActivity.class);
-//                startActivity(intent);
-//            }
-//        });
-//
-//        eventSection.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(Home.this, EventActivity.class);
-//                startActivity(intent);
-//            }
-//        });
-//
-//        rulesSection.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(Home.this, RulesActivity.class);
-//                startActivity(intent);
-//            }
-//        });
-
-
-
-        // Set the welcome message with the username
-//        tvwelcometxt.setText("Welcome " + uname);
-
-        // Set the logout button functionality
-        logoutbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(HomeActivity.this, "You are logged out", Toast.LENGTH_SHORT).show();
-
-                // Clear the login status and username in SharedPreferences
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putBoolean("loggedIn", false);
-                editor.putString("username", null);
-                editor.apply(); // Apply the changes
-
-                // Redirect to MainActivity
-                Intent hometomain = new Intent(HomeActivity.this, MainActivity.class);
-                hometomain.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(hometomain);
-                finish();
-            }
-        });
-
         rulesSection.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -138,11 +63,46 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        attendanceSection.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Intent intent = new Intent(HomeActivity.this, AttendanceActivity.class);
+//                startActivity(intent);
+            }
+        });
+
+        requestsSection.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                Intent i1 = new Intent(HomeActivity.this, Leave.class);
+//                startActivity(i1);
+            }
+        });
+
         complaintSection.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i1 = new Intent(HomeActivity.this, Complaint.class);
                 startActivity(i1);
+            }
+        });
+
+        logoutbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(HomeActivity.this, "You are logged out", Toast.LENGTH_SHORT).show();
+
+                // Clear the login status and username in SharedPreferences
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putBoolean("loggedIn", false);
+                editor.putString("username", null);
+                editor.apply(); // Apply the changes
+
+                // Redirect to MainActivity
+                Intent hometomain = new Intent(HomeActivity.this, MainActivity.class);
+                hometomain.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(hometomain);
+                finish();
             }
         });
     }

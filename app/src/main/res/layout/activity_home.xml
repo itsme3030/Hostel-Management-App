@@ -57,7 +57,7 @@
             android:layout_marginTop="16dp"
             android:orientation="vertical">
 
-            <!-- Attendance Section -->
+            <!-- Rules Section -->
             <LinearLayout
                 android:id="@+id/rulesSection"
                 android:layout_width="match_parent"
@@ -84,7 +84,7 @@
                     android:letterSpacing="0.05" />
             </LinearLayout>
 
-            <!-- Requests Section -->
+            <!-- Food Schedule Section -->
             <LinearLayout
                 android:id="@+id/foodScheduleSection"
                 android:layout_width="match_parent"
@@ -112,7 +112,7 @@
                     android:letterSpacing="0.05" />
             </LinearLayout>
 
-            <!-- Food Schedule Section -->
+            <!-- Food Attendance Section -->
             <LinearLayout
                 android:id="@+id/foodAttendanceSection"
                 android:layout_width="match_parent"
@@ -140,7 +140,7 @@
                     android:letterSpacing="0.05" />
             </LinearLayout>
 
-            <!-- Complaint Section -->
+            <!-- Leave Request Section -->
             <LinearLayout
                 android:id="@+id/requestSection"
                 android:layout_width="match_parent"
@@ -168,7 +168,7 @@
                     android:letterSpacing="0.05" />
             </LinearLayout>
 
-            <!-- Event Section -->
+            <!-- Complaint Section -->
             <LinearLayout
                 android:id="@+id/complaintSection"
                 android:layout_width="match_parent"
@@ -195,32 +195,6 @@
                     android:fontFamily="consolas"
                     android:letterSpacing="0.05" />
             </LinearLayout>
-
-            <!-- Rules Section -->
-
-
-<!--            <LinearLayout-->
-<!--                android:id="@+id/logoutsection"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginBottom="8dp"-->
-<!--                android:background="@drawable/section_bg"-->
-<!--                android:orientation="vertical"-->
-<!--                android:padding="16dp">-->
-
-
-
-<!--                <Button-->
-<!--                    android:id="@+id/logoutbtn"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginTop="32dp"-->
-<!--                    android:background="#F44336"-->
-<!--                    android:padding="12dp"-->
-<!--                    android:text="Logout"-->
-<!--                    android:textColor="#FFFFFF"-->
-<!--                    android:textSize="22sp" />-->
-<!--            </LinearLayout>-->
 
         </LinearLayout>
 
