@@ -18,10 +18,14 @@ public class Complaint extends AppCompatActivity {
         btnFood = findViewById(R.id.btn_food);
         btnConfidential = findViewById(R.id.btn_confidential);
 
+        Intent i1 = getIntent();
+        String ID = i1.getStringExtra("ID");
+
         btnMaintenance.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Complaint.this, MaintainanceComplaint.class);
+                intent.putExtra("ID",ID);
                 startActivity(intent);
             }
         });
@@ -30,6 +34,7 @@ public class Complaint extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Complaint.this, FoodComplaint.class);
+                intent.putExtra("ID",ID);
                 startActivity(intent);
             }
         });
@@ -38,6 +43,7 @@ public class Complaint extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Complaint.this, ConfidentialComplaint.class);
+                intent.putExtra("ID",ID);
                 startActivity(intent);
             }
         });

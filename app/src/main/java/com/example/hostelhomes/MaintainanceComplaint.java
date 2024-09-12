@@ -1,5 +1,7 @@
 package com.example.hostelhomes;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -21,6 +23,10 @@ import com.google.firebase.database.FirebaseDatabase;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maintainance_complaint);
 
+        // Get the username from the intent
+        Intent intent = getIntent();
+        String ID = intent.getStringExtra("ID");
+
         // Initialize views
         editTextComplaint = findViewById(R.id.editText_maintenance_complaint);
         btnSendComplaint = findViewById(R.id.btn_send_maintenance_complaint);
@@ -37,7 +43,9 @@ import com.google.firebase.database.FirebaseDatabase;
                 // Check if the complaint text is empty
                 if (!TextUtils.isEmpty(complaintText)) {
                     // Example student and staff IDs (replace with dynamic values)
-                    String studentId = "user1";  // Replace with actual student ID
+                    String studentId = ID;  // Replace with actual student ID
+                    System.out.println("ID");
+//                    System.out.println(ID);
                     String staffId = "ms1";      // Replace with actual maintenance staff ID
                     long timestamp = System.currentTimeMillis(); // Current timestamp
 

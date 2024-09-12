@@ -1,5 +1,7 @@
 package com.example.hostelhomes;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -21,6 +23,10 @@ public class FoodComplaint extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food_complaint);
 
+        // Get the username from the intent
+        Intent intent = getIntent();
+        String ID = intent.getStringExtra("ID");
+
         // Initialize views
         editTextComplaint = findViewById(R.id.editText_food_complaint);
         btnSendComplaint = findViewById(R.id.btn_send_food_complaint);
@@ -37,7 +43,7 @@ public class FoodComplaint extends AppCompatActivity {
                 // Check if the complaint text is empty
                 if (!TextUtils.isEmpty(complaintText)) {
                     // Example student and staff IDs (replace with dynamic values)
-                    String studentId = "user1";  // Replace with actual student ID
+                    String studentId = ID;  // Replace with actual student ID
                     String staffId = "fs1";      // Replace with actual food staff ID
                     long timestamp = System.currentTimeMillis(); // Current timestamp
 
