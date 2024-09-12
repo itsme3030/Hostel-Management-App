@@ -25,5 +25,44 @@
         android:textSize="22sp"
         android:textColor="#FFFFFF"
         android:text="Send" />
-
 </LinearLayout>
+
+    <!--</LinearLayout>-->
+<!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="match_parent"-->
+<!--android:padding="16dp">-->
+
+<!--&lt;!&ndash; RecyclerView to display complaints &ndash;&gt;-->
+<!--<androidx.recyclerview.widget.RecyclerView-->
+<!--    android:id="@+id/recyclerViewComplaints"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="0dp"-->
+<!--    android:layout_above="@+id/complaintLayout"-->
+<!--    android:layout_alignParentTop="true"-->
+<!--    android:scrollbars="vertical" />-->
+
+<!--&lt;!&ndash; Complaint input field and send button &ndash;&gt;-->
+<!--<LinearLayout-->
+<!--    android:id="@+id/complaintLayout"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:orientation="horizontal"-->
+<!--    android:layout_alignParentBottom="true">-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/editTextComplaint"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_weight="1"-->
+<!--        android:hint="Enter your complaint..."-->
+<!--        android:padding="16dp" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/btnSubmitComplaint"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Send" />-->
+<!--</LinearLayout>-->
+
+<!--</RelativeLayout>-->

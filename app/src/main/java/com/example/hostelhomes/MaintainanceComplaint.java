@@ -26,7 +26,7 @@ public class MaintainanceComplaint extends AppCompatActivity {
         btnSendComplaint = findViewById(R.id.btn_send_maintenance_complaint);
 
         // Initialize Firebase reference (complaints node)
-        databaseReference = FirebaseDatabase.getInstance().getReference("maintenance_complaints");
+        databaseReference = FirebaseDatabase.getInstance().getReference("complaints/maintainance_complaint");
 
         // Set up send button click listener
         btnSendComplaint.setOnClickListener(new View.OnClickListener() {
