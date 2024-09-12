@@ -1,4 +1,5 @@
 package com.example.hostelhomes;
+
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -20,30 +21,43 @@ public class FoodComplaint extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food_complaint);
 
+        // Initialize views
         editTextComplaint = findViewById(R.id.editText_food_complaint);
         btnSendComplaint = findViewById(R.id.btn_send_food_complaint);
 
-        databaseReference = FirebaseDatabase.getInstance().getReference("complaints");
+        // Initialize Firebase reference for food complaints
+        databaseReference = FirebaseDatabase.getInstance().getReference("complaints/food_complaints");
 
+        // Set up send button click listener
         btnSendComplaint.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String complaint = editTextComplaint.getText().toString().trim();
+                String complaintText = editTextComplaint.getText().toString().trim();
 
-                if (!TextUtils.isEmpty(complaint)) {
-                    sendComplaintToFirebase("food department", complaint);
-                    sendComplaintToFirebase("superwiser", complaint);
-                    Toast.makeText(FoodComplaint.this, "Complaint Sent", Toast.LENGTH_SHORT).show();
-                    editTextComplaint.setText("");
+                // Check if the complaint text is empty
+                if (!TextUtils.isEmpty(complaintText)) {
+                    // Example student and staff IDs (replace with dynamic values)
+                    String studentId = "user1";  // Replace with actual student ID
+                    String staffId = "fs1";      // Replace with actual food staff ID
+                    long timestamp = System.currentTimeMillis(); // Current timestamp
+
+                    // Generate a unique complaint ID
+                    String foodComplaintId = databaseReference.push().getKey();
+
+                    // Create a FoodComplaintModel object with necessary data
+                    FoodComplaintModel complaintModel = new FoodComplaintModel(studentId, staffId, "food", complaintText, "pending", timestamp);
+
+                    // Store the complaint in Firebase under "food_complaints" node
+                    databaseReference.child(foodComplaintId).setValue(complaintModel);
+
+                    // Show success message and clear the input
+                    Toast.makeText(FoodComplaint.this, "Food Complaint Sent", Toast.LENGTH_SHORT).show();
+                    editTextComplaint.setText("");  // Clear the input field
                 } else {
+                    // Show an error message if the complaint text is empty
                     Toast.makeText(FoodComplaint.this, "Please enter your complaint", Toast.LENGTH_SHORT).show();
                 }
             }
         });
-    }
-
-    private void sendComplaintToFirebase(String department, String complaint) {
-        DatabaseReference ref = databaseReference.child(department);
-        ref.push().setValue(complaint);
     }
 }
