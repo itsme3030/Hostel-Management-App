@@ -1,8 +1,10 @@
 package com.example.hostelhomes;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -14,29 +16,31 @@ import androidx.appcompat.app.AppCompatActivity;
 public class HomeActivity extends AppCompatActivity {
 
     Button logoutbtn;
-    TextView tvwelcometxt,tvUserName;
+    TextView tvUserName;
     SharedPreferences sharedPreferences;
+    private static final String TAG = "HomeActivity";
     private static final String PREFS_NAME = "LoginPrefs"; // Name for SharedPreferences
 
     private LinearLayout rulesSection, foodScheduleSection, attendanceSection, requestsSection, complaintSection;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        //Define sharedPreferences
+        // Define sharedPreferences
         sharedPreferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
 
-        // Get the username from the intent
+        // Get the username and ID from the intent
         Intent intent = getIntent();
         String uname = intent.getStringExtra("uname");
+        String ID = intent.getStringExtra("ID");
 
-        logoutbtn = findViewById(R.id.logoutbtn);
+        Log.d(TAG, "Received in HomeActivity - Username: " + uname + ", ID: " + ID);  // Debugging log
+
         tvUserName = findViewById(R.id.tvUserName);
 
-        //set UserName
+        // Set the UserName and ID in the UI
         tvUserName.setText("Welcome " + uname);
 
         // Initialize UI elements
@@ -83,20 +87,22 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i1 = new Intent(HomeActivity.this, Complaint.class);
+                i1.putExtra("ID", ID);
                 startActivity(i1);
             }
         });
 
+        // Set up logout button
+        logoutbtn = findViewById(R.id.logoutbtn);
         logoutbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(HomeActivity.this, "You are logged out", Toast.LENGTH_SHORT).show();
 
-                // Clear the login status and username in SharedPreferences
+                // Clear login status in SharedPreferences
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putBoolean("loggedIn", false);
-                editor.putString("username", null);
-                editor.apply(); // Apply the changes
+                editor.apply();
 
                 // Redirect to MainActivity
                 Intent hometomain = new Intent(HomeActivity.this, MainActivity.class);

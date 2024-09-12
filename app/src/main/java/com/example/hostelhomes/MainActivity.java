@@ -21,8 +21,7 @@ import com.google.firebase.database.ValueEventListener;
 public class MainActivity extends AppCompatActivity {
 
     Button loginbtn;
-    EditText etuname;
-    EditText etpassword;
+    EditText etuname, etid, etpassword;
     DatabaseReference databaseReference;
     private static final String TAG = "MainActivity";
     private static final String PREFS_NAME = "LoginPrefs"; // Name for SharedPreferences
@@ -34,18 +33,19 @@ public class MainActivity extends AppCompatActivity {
         // Check if the user is already logged in
         SharedPreferences preferences = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
         if (preferences.getBoolean("loggedIn", false)) {
-            // User is already logged in, redirect to Home activity
             Intent intent = new Intent(MainActivity.this, HomeActivity.class);
             intent.putExtra("uname", preferences.getString("username", ""));
+            intent.putExtra("ID", preferences.getString("ID", ""));
             startActivity(intent);
             finish();
-            return; // Skip the rest of the onCreate logic
+            return;
         }
 
         setContentView(R.layout.activity_main);
 
         loginbtn = findViewById(R.id.loginbtn);
         etuname = findViewById(R.id.etuname);
+        etid = findViewById(R.id.etid);
         etpassword = findViewById(R.id.etpassword);
 
         // Initialize Firebase Database
@@ -56,13 +56,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String uname = etuname.getText().toString();
+                String id = etid.getText().toString();
                 String pass = etpassword.getText().toString();
+
                 Log.d(TAG, "Login button clicked, username: " + uname);
-                if (!uname.isEmpty() && !pass.isEmpty()) {
+                if (!uname.isEmpty() && !pass.isEmpty() && !id.isEmpty()) {
                     Log.d(TAG, "Authentication process started");
                     authenticateUser(uname, pass);
                 } else {
-                    Toast.makeText(MainActivity.this, "Please enter Username and Password", Toast.LENGTH_LONG).show();
+                    Toast.makeText(MainActivity.this, "Please enter Username, ID, and Password", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -79,25 +81,26 @@ public class MainActivity extends AppCompatActivity {
                 for (DataSnapshot userSnapshot : snapshot.getChildren()) {
                     String username = userSnapshot.child("username").getValue(String.class);
                     String password = userSnapshot.child("password").getValue(String.class);
+                    String ID = userSnapshot.child("ID").getValue(String.class);  // Retrieve ID from Firebase
+
+                    Log.d(TAG, "Retrieved from Firebase - Username: " + username + ", ID: " + ID);  // Debugging log
 
                     if (username != null && username.equals(inputUsername)) {
                         userFound = true;
-                        Log.d(TAG, "User found in database: " + username);
-                        if (password != null && password.equals(inputPassword)) {
-                            Log.d(TAG, "Password matched for user: " + username);
-                            Toast.makeText(MainActivity.this, "You are logged in as " + username, Toast.LENGTH_LONG).show();
 
-                            // Save login status and username in SharedPreferences
+                        if (password != null && password.equals(inputPassword)) {
+                            // Save login status, username, and ID in SharedPreferences
                             SharedPreferences preferences = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
                             SharedPreferences.Editor editor = preferences.edit();
                             editor.putBoolean("loggedIn", true);
                             editor.putString("username", username);
-                            editor.apply(); // Apply the changes
+                            editor.putString("ID", ID);  // Store ID
+                            editor.apply();
 
+                            // Pass username and ID to HomeActivity
                             Intent maintohome = new Intent(MainActivity.this, HomeActivity.class);
                             maintohome.putExtra("uname", username);
-                            etuname.setText("");
-                            etpassword.setText("");
+                            maintohome.putExtra("ID", ID);  // Pass ID
                             startActivity(maintohome);
                             finish();
                         } else {

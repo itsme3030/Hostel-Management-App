@@ -21,6 +21,17 @@
 
 
     <EditText
+        android:id="@+id/etid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ID"
+        android:textColor="#000000"
+        android:background="@drawable/edittext_bg"
+        android:padding="10dp"
+        android:textColorHint="#888888"
+        android:textSize="16sp"/>
+
+    <EditText
         android:id="@+id/etuname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -28,6 +39,7 @@
         android:textColor="#000000"
         android:background="@drawable/edittext_bg"
         android:padding="10dp"
+        android:layout_marginTop="16dp"
         android:textColorHint="#888888"
         android:textSize="16sp"/>
 
