@@ -1,4 +1,5 @@
 package com.example.hostelhomes;
+
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -20,29 +21,43 @@ public class ConfidentialComplaint extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confidential_complaint);
 
+        // Initialize views
         editTextComplaint = findViewById(R.id.editText_confidential_complaint);
         btnSendComplaint = findViewById(R.id.btn_send_confidential_complaint);
 
-        databaseReference = FirebaseDatabase.getInstance().getReference("complaints");
+        // Initialize Firebase reference for confidential complaints
+        databaseReference = FirebaseDatabase.getInstance().getReference("complaints/confidential_complaint");
 
+        // Set up send button click listener
         btnSendComplaint.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String complaint = editTextComplaint.getText().toString().trim();
+                String complaintText = editTextComplaint.getText().toString().trim();
 
-                if (!TextUtils.isEmpty(complaint)) {
-                    sendComplaintToFirebase("superwiser", complaint);
+                // Check if the complaint text is empty
+                if (!TextUtils.isEmpty(complaintText)) {
+                    // Example student and supervisor IDs (replace with dynamic values)
+                    String studentId = "user1";  // Replace with actual student ID
+                    String staffId = "supervisor";  // Replace with supervisor staff ID
+                    long timestamp = System.currentTimeMillis(); // Current timestamp
+
+                    // Generate a unique complaint ID
+                    String confidentialComplaintId = databaseReference.push().getKey();
+
+                    // Create a ConfidentialComplaintModel object with necessary data
+                    ConfidentialComplaintModel complaintModel = new ConfidentialComplaintModel(studentId, staffId, "supervisor", complaintText, "pending", timestamp);
+
+                    // Store the complaint in Firebase under "confidential_complaints" node
+                    databaseReference.child(confidentialComplaintId).setValue(complaintModel);
+
+                    // Show success message and clear the input
                     Toast.makeText(ConfidentialComplaint.this, "Confidential Report Sent", Toast.LENGTH_SHORT).show();
-                    editTextComplaint.setText("");
+                    editTextComplaint.setText("");  // Clear the input field
                 } else {
+                    // Show an error message if the complaint text is empty
                     Toast.makeText(ConfidentialComplaint.this, "Please enter your report", Toast.LENGTH_SHORT).show();
                 }
             }
         });
-    }
-
-    private void sendComplaintToFirebase(String department, String complaint) {
-        DatabaseReference ref = databaseReference.child(department);
-        ref.push().setValue(complaint);
     }
 }
