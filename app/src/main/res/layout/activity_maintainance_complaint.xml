@@ -8,8 +8,9 @@
     <EditText
         android:id="@+id/editText_maintenance_complaint"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edittext_bg"
+        android:textColorHint="#888888"
         android:hint='"Enter your complaint, Regarding maintainance-department."'
         android:textSize="20sp"
         android:padding="16dp"
@@ -19,12 +20,23 @@
         android:id="@+id/btn_send_maintenance_complaint"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:background="#F44336"
-        android:padding="12dp"
-        android:textSize="22sp"
         android:textColor="#FFFFFF"
+        android:background="#4CAF50"
+        android:layout_marginTop="32dp"
+        android:padding="12dp"
+        android:textSize="18sp"
         android:text="Send" />
+
+    <Button
+        android:id="@+id/btn_view_maintenance_complaint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:background="#4CAF50"
+        android:layout_marginTop="32dp"
+        android:padding="12dp"
+        android:textSize="18sp"
+        android:text="view complaints" />
 </LinearLayout>
 
     <!--</LinearLayout>-->
