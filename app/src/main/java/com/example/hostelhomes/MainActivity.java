@@ -82,8 +82,9 @@ public class MainActivity extends AppCompatActivity {
                     String username = userSnapshot.child("username").getValue(String.class);
                     String password = userSnapshot.child("password").getValue(String.class);
                     String ID = userSnapshot.child("ID").getValue(String.class);  // Retrieve ID from Firebase
+                    String role = userSnapshot.child("role").getValue(String.class);  // Retrieve role from Firebase
 
-                    Log.d(TAG, "Retrieved from Firebase - Username: " + username + ", ID: " + ID);  // Debugging log
+                    Log.d(TAG, "Retrieved from Firebase - Username: " + username + ", Role: " + role + ", ID: " + ID);  // Debugging log
 
                     if (username != null && username.equals(inputUsername)) {
                         userFound = true;
@@ -97,12 +98,36 @@ public class MainActivity extends AppCompatActivity {
                             editor.putString("ID", ID);  // Store ID
                             editor.apply();
 
-                            // Pass username and ID to HomeActivity
-                            Intent maintohome = new Intent(MainActivity.this, HomeActivity.class);
-                            maintohome.putExtra("uname", username);
-                            maintohome.putExtra("ID", ID);  // Pass ID
-                            startActivity(maintohome);
-                            finish();
+                            // Switch based on the role
+                            if (role != null) {
+                                Intent intent;
+                                switch (role) {
+                                    case "admin":
+                                        intent = new Intent(MainActivity.this, Adminhomeactivity.class);
+                                        break;
+                                    case "food staff":
+                                        intent = new Intent(MainActivity.this, Foodstaffhomeactivity.class);
+                                        break;
+                                    case "maintenance staff":
+                                        intent = new Intent(MainActivity.this, Maintainancestaffhomeactivity.class);
+                                        break;
+                                    case "supervisor":
+                                        intent = new Intent(MainActivity.this, Supervisorhomeactivity.class);
+                                        break;
+                                    default:
+                                        // Fallback to HomeActivity if the role is not recognized
+                                        intent = new Intent(MainActivity.this, HomeActivity.class);
+                                        break;
+                                }
+                                // Pass username and ID to the respective activity
+                                intent.putExtra("uname", username);
+                                intent.putExtra("ID", ID);  // Pass ID
+                                startActivity(intent);
+                                finish();
+                            } else {
+                                Toast.makeText(MainActivity.this, "Role not found for this user", Toast.LENGTH_LONG).show();
+                            }
+
                         } else {
                             Toast.makeText(MainActivity.this, "Invalid password", Toast.LENGTH_LONG).show();
                         }

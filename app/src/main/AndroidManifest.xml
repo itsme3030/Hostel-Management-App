@@ -12,7 +12,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HostelHomes"
         tools:targetApi="31">
-        <activity android:name=".LeaveRequestActivity" android:exported="false" />
+        <activity
+            android:name=".Supervisorhomeactivity"
+            android:exported="false" />
+        <activity
+            android:name=".Maintainancestaffhomeactivity"
+            android:exported="false" />
+        <activity
+            android:name=".Foodstaffhomeactivity"
+            android:exported="false" />
+        <activity
+            android:name=".Adminhomeactivity"
+            android:exported="false" />
+        <activity
+            android:name=".LeaveRequestActivity"
+            android:exported="false" />
         <activity
             android:name=".ConfidentialComplaint"
             android:exported="false" />
