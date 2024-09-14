@@ -65,6 +65,34 @@
                 android:layout_marginTop="16dp"
                 android:orientation="vertical">
 
+
+                <!-- Food Schedule section card -->
+                <LinearLayout
+                    android:id="@+id/foodScheduleSection"
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/section_bg"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:src="@drawable/foodschedule"
+                        android:layout_marginEnd="16dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Food Schedule"
+                        android:textColor="@android:color/black"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+
                 <!-- Complaints Section -->
                 <LinearLayout
                     android:id="@+id/complaintSection"
@@ -90,6 +118,8 @@
                         android:textSize="24sp"
                         android:textStyle="bold" />
                 </LinearLayout>
+
+
             </LinearLayout>
         </LinearLayout>
 

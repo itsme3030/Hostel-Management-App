@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -16,12 +17,28 @@ import androidx.core.view.WindowInsetsCompat;
 public class Foodstaffhomeactivity extends AppCompatActivity {
     SharedPreferences sharedPreferences;
     private static final String PREFS_NAME = "LoginPrefs";
-
+    LinearLayout foodScheduleSection, complaintSection;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_foodstaffhomeactivity);
+
+        foodScheduleSection = findViewById(R.id.foodScheduleSection);
+        complaintSection = findViewById(R.id.complaintSection);
+
+        foodScheduleSection.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i1 = new Intent(Foodstaffhomeactivity.this, FoodstaffFoodSchedule.class);
+                startActivity(i1);
+            }
+        });
+
+
+
+
+
 
         // Set up logout button
         sharedPreferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
@@ -32,7 +49,6 @@ public class Foodstaffhomeactivity extends AppCompatActivity {
                 Toast.makeText(Foodstaffhomeactivity.this, "You are logged out", Toast.LENGTH_SHORT).show();
 
                 // Clear login status in SharedPreferences
-
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putBoolean("loggedIn", false);
                 editor.apply();
