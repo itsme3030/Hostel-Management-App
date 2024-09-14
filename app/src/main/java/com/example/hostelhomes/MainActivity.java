@@ -33,9 +33,32 @@ public class MainActivity extends AppCompatActivity {
         // Check if the user is already logged in
         SharedPreferences preferences = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
         if (preferences.getBoolean("loggedIn", false)) {
-            Intent intent = new Intent(MainActivity.this, HomeActivity.class);
-            intent.putExtra("uname", preferences.getString("username", ""));
-            intent.putExtra("ID", preferences.getString("ID", ""));
+            String role = preferences.getString("role", "student"); // Default to student if role not found
+            String username = preferences.getString("username", "");
+            String ID = preferences.getString("ID", "");
+
+            // Redirect based on the saved role
+            Intent intent;
+            switch (role) {
+                case "admin":
+                    intent = new Intent(MainActivity.this, Adminhomeactivity.class);
+                    break;
+                case "food staff":
+                    intent = new Intent(MainActivity.this, Foodstaffhomeactivity.class);
+                    break;
+                case "maintenance staff":
+                    intent = new Intent(MainActivity.this, Maintainancestaffhomeactivity.class);
+                    break;
+                case "supervisor":
+                    intent = new Intent(MainActivity.this, Supervisorhomeactivity.class);
+                    break;
+                default:
+                    intent = new Intent(MainActivity.this, HomeActivity.class);  // Default to HomeActivity for students
+                    break;
+            }
+            // Pass username and ID to the respective activity
+            intent.putExtra("uname", username);
+            intent.putExtra("ID", ID);
             startActivity(intent);
             finish();
             return;
@@ -90,44 +113,39 @@ public class MainActivity extends AppCompatActivity {
                         userFound = true;
 
                         if (password != null && password.equals(inputPassword)) {
-                            // Save login status, username, and ID in SharedPreferences
+                            // Save login status, username, ID, and role in SharedPreferences
                             SharedPreferences preferences = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
                             SharedPreferences.Editor editor = preferences.edit();
                             editor.putBoolean("loggedIn", true);
                             editor.putString("username", username);
                             editor.putString("ID", ID);  // Store ID
+                            editor.putString("role", role);  // Store role
                             editor.apply();
 
                             // Switch based on the role
-                            if (role != null) {
-                                Intent intent;
-                                switch (role) {
-                                    case "admin":
-                                        intent = new Intent(MainActivity.this, Adminhomeactivity.class);
-                                        break;
-                                    case "food staff":
-                                        intent = new Intent(MainActivity.this, Foodstaffhomeactivity.class);
-                                        break;
-                                    case "maintenance staff":
-                                        intent = new Intent(MainActivity.this, Maintainancestaffhomeactivity.class);
-                                        break;
-                                    case "supervisor":
-                                        intent = new Intent(MainActivity.this, Supervisorhomeactivity.class);
-                                        break;
-                                    default:
-                                        // Fallback to HomeActivity if the role is not recognized
-                                        intent = new Intent(MainActivity.this, HomeActivity.class);
-                                        break;
-                                }
-                                // Pass username and ID to the respective activity
-                                intent.putExtra("uname", username);
-                                intent.putExtra("ID", ID);  // Pass ID
-                                startActivity(intent);
-                                finish();
-                            } else {
-                                Toast.makeText(MainActivity.this, "Role not found for this user", Toast.LENGTH_LONG).show();
+                            Intent intent;
+                            switch (role) {
+                                case "admin":
+                                    intent = new Intent(MainActivity.this, Adminhomeactivity.class);
+                                    break;
+                                case "food staff":
+                                    intent = new Intent(MainActivity.this, Foodstaffhomeactivity.class);
+                                    break;
+                                case "maintenance staff":
+                                    intent = new Intent(MainActivity.this, Maintainancestaffhomeactivity.class);
+                                    break;
+                                case "supervisor":
+                                    intent = new Intent(MainActivity.this, Supervisorhomeactivity.class);
+                                    break;
+                                default:
+                                    intent = new Intent(MainActivity.this, HomeActivity.class);  // Default to HomeActivity for students
+                                    break;
                             }
-
+                            // Pass username and ID to the respective activity
+                            intent.putExtra("uname", username);
+                            intent.putExtra("ID", ID);  // Pass ID
+                            startActivity(intent);
+                            finish();
                         } else {
                             Toast.makeText(MainActivity.this, "Invalid password", Toast.LENGTH_LONG).show();
                         }
