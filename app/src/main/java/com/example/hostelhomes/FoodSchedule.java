@@ -92,9 +92,9 @@ public class FoodSchedule extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
-                    String morning = dataSnapshot.child("morning").getValue(String.class);
-                    String afternoon = dataSnapshot.child("afternoon").getValue(String.class);
-                    String evening = dataSnapshot.child("evening").getValue(String.class);
+                    String morning = dataSnapshot.child("Morning").getValue(String.class);
+                    String afternoon = dataSnapshot.child("Afternoon").getValue(String.class);
+                    String evening = dataSnapshot.child("Evening").getValue(String.class);
 
                     mondayMorningView.setText("Morning: " + morning);
                     mondayAfternoonView.setText("Afternoon: " + afternoon);
@@ -113,9 +113,9 @@ public class FoodSchedule extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
-                    String morning = dataSnapshot.child("morning").getValue(String.class);
-                    String afternoon = dataSnapshot.child("afternoon").getValue(String.class);
-                    String evening = dataSnapshot.child("evening").getValue(String.class);
+                    String morning = dataSnapshot.child("Morning").getValue(String.class);
+                    String afternoon = dataSnapshot.child("Afternoon").getValue(String.class);
+                    String evening = dataSnapshot.child("Evening").getValue(String.class);
 
                     tuesdayMorningView.setText("Morning: " + morning);
                     tuesdayAfternoonView.setText("Afternoon: " + afternoon);
@@ -134,9 +134,9 @@ public class FoodSchedule extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
-                    String morning = dataSnapshot.child("morning").getValue(String.class);
-                    String afternoon = dataSnapshot.child("afternoon").getValue(String.class);
-                    String evening = dataSnapshot.child("evening").getValue(String.class);
+                    String morning = dataSnapshot.child("Morning").getValue(String.class);
+                    String afternoon = dataSnapshot.child("Afternoon").getValue(String.class);
+                    String evening = dataSnapshot.child("Evening").getValue(String.class);
 
                     wednesdayMorningView.setText("Morning: " + morning);
                     wednesdayAfternoonView.setText("Afternoon: " + afternoon);
@@ -155,9 +155,9 @@ public class FoodSchedule extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
-                    String morning = dataSnapshot.child("morning").getValue(String.class);
-                    String afternoon = dataSnapshot.child("afternoon").getValue(String.class);
-                    String evening = dataSnapshot.child("evening").getValue(String.class);
+                    String morning = dataSnapshot.child("Morning").getValue(String.class);
+                    String afternoon = dataSnapshot.child("Afternoon").getValue(String.class);
+                    String evening = dataSnapshot.child("Evening").getValue(String.class);
 
                     thursdayMorningView.setText("Morning: " + morning);
                     thursdayAfternoonView.setText("Afternoon: " + afternoon);
@@ -176,9 +176,9 @@ public class FoodSchedule extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
-                    String morning = dataSnapshot.child("morning").getValue(String.class);
-                    String afternoon = dataSnapshot.child("afternoon").getValue(String.class);
-                    String evening = dataSnapshot.child("evening").getValue(String.class);
+                    String morning = dataSnapshot.child("Morning").getValue(String.class);
+                    String afternoon = dataSnapshot.child("Afternoon").getValue(String.class);
+                    String evening = dataSnapshot.child("Evening").getValue(String.class);
 
                     fridayMorningView.setText("Morning: " + morning);
                     fridayAfternoonView.setText("Afternoon: " + afternoon);
@@ -197,9 +197,9 @@ public class FoodSchedule extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
-                    String morning = dataSnapshot.child("morning").getValue(String.class);
-                    String afternoon = dataSnapshot.child("afternoon").getValue(String.class);
-                    String evening = dataSnapshot.child("evening").getValue(String.class);
+                    String morning = dataSnapshot.child("Morning").getValue(String.class);
+                    String afternoon = dataSnapshot.child("Afternoon").getValue(String.class);
+                    String evening = dataSnapshot.child("Evening").getValue(String.class);
 
                     saturdayMorningView.setText("Morning: " + morning);
                     saturdayAfternoonView.setText("Afternoon: " + afternoon);
@@ -218,9 +218,9 @@ public class FoodSchedule extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
-                    String morning = dataSnapshot.child("morning").getValue(String.class);
-                    String afternoon = dataSnapshot.child("afternoon").getValue(String.class);
-                    String evening = dataSnapshot.child("evening").getValue(String.class);
+                    String morning = dataSnapshot.child("Morning").getValue(String.class);
+                    String afternoon = dataSnapshot.child("Afternoon").getValue(String.class);
+                    String evening = dataSnapshot.child("Evening").getValue(String.class);
 
                     sundayMorningView.setText("Morning: " + morning);
                     sundayAfternoonView.setText("Afternoon: " + afternoon);

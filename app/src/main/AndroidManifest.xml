@@ -13,6 +13,12 @@
         android:theme="@style/Theme.HostelHomes"
         tools:targetApi="31">
         <activity
+            android:name=".FoodstaffCaptureActivityPortrait"
+            android:exported="false" />
+        <activity
+            android:name=".FoodstaffAttendanceScanner"
+            android:exported="false" />
+        <activity
             android:name=".FoodstaffMealSelection"
             android:exported="false" />
         <activity

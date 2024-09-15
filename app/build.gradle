@@ -1,6 +1,5 @@
 plugins {
     alias(libs.plugins.android.application)
-//    id 'com.android.application'
     id 'com.google.gms.google-services'
 }
 
@@ -8,7 +7,7 @@ android {
     namespace 'com.example.hostelhomes'
     compileSdk 34
 
-        defaultConfig {
+    defaultConfig {
         applicationId "com.example.hostelhomes"
         minSdk 24
         targetSdk 34
@@ -31,7 +30,7 @@ android {
 }
 
 dependencies {
-
+    // Your existing dependencies
     implementation libs.appcompat
     implementation libs.material
     implementation libs.activity
@@ -39,7 +38,17 @@ dependencies {
     implementation platform('com.google.firebase:firebase-bom:33.2.0')
     implementation 'com.google.firebase:firebase-analytics'
     implementation libs.firebase.database
+
+    // Unit and Android Test dependencies
     testImplementation libs.junit
     androidTestImplementation libs.ext.junit
     androidTestImplementation libs.espresso.core
+
+    // ZXing dependencies for QR code scanning
+    implementation 'com.journeyapps:zxing-android-embedded:4.3.0'
+    implementation 'com.google.zxing:core:3.3.0'
+
+    // AndroidX dependencies for compatibility
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.annotation:annotation:1.5.0'
 }

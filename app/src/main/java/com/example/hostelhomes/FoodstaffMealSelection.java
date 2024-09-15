@@ -56,10 +56,12 @@ public class FoodstaffMealSelection extends AppCompatActivity {
                 finish();
             }
         });
-    }
+        }
         private void sendMealTime () {
             // Send the selected meal time back to the scanner activity
-
+        Intent intent = new Intent(FoodstaffMealSelection.this, FoodstaffAttendanceScanner.class);
+        intent.putExtra("currentMealTime", currentMealTime);
+        startActivity(intent);
 
             // Show a confirmation message
             Toast.makeText(FoodstaffMealSelection.this, "Meal time set to " + currentMealTime, Toast.LENGTH_SHORT).show();
