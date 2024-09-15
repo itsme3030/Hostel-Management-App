@@ -50,7 +50,6 @@ public class HomeActivity extends AppCompatActivity {
         requestsSection = findViewById(R.id.requestSection);
         complaintSection = findViewById(R.id.complaintSection);
         qrcodeSection = findViewById(R.id.qrcodeSection);
-
         // Set click listeners
         rulesSection.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,11 +67,14 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+
+
         attendanceSection.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent intent = new Intent(HomeActivity.this, AttendanceActivity.class);
-//                startActivity(intent);
+                Intent intent = new Intent(HomeActivity.this, FoodAttendance.class);
+                intent.putExtra("ID", ID);
+                startActivity(intent);
             }
         });
 
