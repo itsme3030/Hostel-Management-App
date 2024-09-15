@@ -14,11 +14,13 @@ public class FoodstaffMealSelection extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_foodstaff_food_schedule);
+        setContentView(R.layout.activity_foodstaff_meal_selection);
 
         Button btnBreakfast = findViewById(R.id.btnBreakfast);
         Button btnLunch = findViewById(R.id.btnLunch);
         Button btnDinner = findViewById(R.id.btnDinner);
+        Button backbutton = findViewById(R.id.backButton);
+
 
         // Set breakfast button click listener
         btnBreakfast.setOnClickListener(new View.OnClickListener() {
@@ -46,15 +48,21 @@ public class FoodstaffMealSelection extends AppCompatActivity {
                 sendMealTime();
             }
         });
+
+
+        backbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+    }
+        private void sendMealTime () {
+            // Send the selected meal time back to the scanner activity
+
+
+            // Show a confirmation message
+            Toast.makeText(FoodstaffMealSelection.this, "Meal time set to " + currentMealTime, Toast.LENGTH_SHORT).show();
+        }
     }
 
-    private void sendMealTime() {
-        // Send the selected meal time back to the scanner activity
-        Intent intent = new Intent(FoodstaffMealSelection.this, FoodAttendanceScanner.class);
-        intent.putExtra("currentMealTime", currentMealTime);
-        startActivity(intent);
-
-        // Show a confirmation message
-        Toast.makeText(FoodstaffMealSelection.this, "Meal time set to " + currentMealTime, Toast.LENGTH_SHORT).show();
-    }
-}

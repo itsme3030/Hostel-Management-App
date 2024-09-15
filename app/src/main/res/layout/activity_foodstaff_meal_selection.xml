@@ -1,35 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:padding="16dp"
-    android:gravity="center">
+    android:background="#f5f5f5">
 
     <Button
         android:id="@+id/btnBreakfast"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Breakfast"
-        android:layout_marginBottom="20dp"
+        android:textSize="18sp"
         android:padding="16dp"
-        android:background="@drawable/section_bg" />
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#009688"
+        android:elevation="4dp"
+        android:layout_alignParentTop="true" />
 
+    <!-- Food Department Button -->
     <Button
         android:id="@+id/btnLunch"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Lunch"
-        android:layout_marginBottom="20dp"
+        android:textSize="18sp"
         android:padding="16dp"
-        android:background="@drawable/section_bg" />
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#4caf50"
+        android:elevation="4dp"
+        android:layout_below="@id/btnBreakfast" />
 
+    <!-- Confidential Report Button -->
     <Button
         android:id="@+id/btnDinner"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Dinner"
+        android:textSize="18sp"
         android:padding="16dp"
-        android:background="@drawable/section_bg" />
+        android:backgroundTint="#2196f3"
+        android:elevation="4dp"
+        android:layout_below="@id/btnLunch" />
 
-</LinearLayout>
+    <!-- Back Button -->
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="16dp"
+        android:background="#F44336"
+        android:padding="12dp"
+        android:textSize="22sp"
+        android:text="Back"
+        android:textColor="#FFFFFF" />
+
+
+</RelativeLayout>
