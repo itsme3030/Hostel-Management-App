@@ -92,6 +92,31 @@
                         android:textStyle="bold" />
                 </LinearLayout>
 
+                <!-- Food Schedule section card -->
+                <LinearLayout
+                    android:id="@+id/foodAttendanceSection"
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/section_bg"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:src="@drawable/foodattendance"
+                        android:layout_marginEnd="16dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Food Attendance"
+                        android:textColor="@android:color/black"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
 
                 <!-- Complaints Section -->
                 <LinearLayout

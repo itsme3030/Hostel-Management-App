@@ -17,7 +17,7 @@ import androidx.core.view.WindowInsetsCompat;
 public class Foodstaffhomeactivity extends AppCompatActivity {
     SharedPreferences sharedPreferences;
     private static final String PREFS_NAME = "LoginPrefs";
-    LinearLayout foodScheduleSection, complaintSection;
+    LinearLayout foodScheduleSection, complaintSection, foodAttendanceSection;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +26,7 @@ public class Foodstaffhomeactivity extends AppCompatActivity {
 
         foodScheduleSection = findViewById(R.id.foodScheduleSection);
         complaintSection = findViewById(R.id.complaintSection);
+        foodAttendanceSection = findViewById(R.id.foodAttendanceSection);
 
         foodScheduleSection.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,6 +36,13 @@ public class Foodstaffhomeactivity extends AppCompatActivity {
             }
         });
 
+        foodAttendanceSection.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i1 = new Intent(Foodstaffhomeactivity.this, FoodstaffMealSelection.class);
+                startActivity(i1);
+            }
+        });
 
 
 

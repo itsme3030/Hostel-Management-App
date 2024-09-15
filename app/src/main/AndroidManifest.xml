@@ -13,6 +13,9 @@
         android:theme="@style/Theme.HostelHomes"
         tools:targetApi="31">
         <activity
+            android:name=".FoodstaffMealSelection"
+            android:exported="false" />
+        <activity
             android:name=".FoodstaffFoodSchedule"
             android:exported="false" />
         <activity
