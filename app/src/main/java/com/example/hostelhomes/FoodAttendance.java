@@ -44,6 +44,10 @@ public class FoodAttendance extends AppCompatActivity {
         calendarView.setOnDateChangeListener((view, year, month, dayOfMonth) -> {
             fetchAttendanceDetails(year, month, dayOfMonth);
         });
+
+        // Fetch attendance details for the current date initially
+        Calendar today = Calendar.getInstance();
+        fetchAttendanceDetails(today.get(Calendar.YEAR), today.get(Calendar.MONTH), today.get(Calendar.DAY_OF_MONTH));
     }
 
     private void fetchAttendanceDetails(int year, int month, int dayOfMonth) {
@@ -64,6 +68,7 @@ public class FoodAttendance extends AppCompatActivity {
                     breakfast = breakfast == null ? "Absent" : breakfast;
                     lunch = lunch == null ? "Absent" : lunch;
                     dinner = dinner == null ? "Absent" : dinner;
+
                     // Display attendance info in the TextView
                     String attendanceInfo = "Breakfast: " + breakfast + "\nLunch: " + lunch + "\nDinner: " + dinner;
                     attendanceDetails.setText(attendanceInfo);
