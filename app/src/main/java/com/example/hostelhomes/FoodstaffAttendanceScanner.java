@@ -86,6 +86,8 @@ public class FoodstaffAttendanceScanner extends AppCompatActivity {
         studentRef.setValue("Present").addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 Toast.makeText(FoodstaffAttendanceScanner.this, "Attendance marked for " + studentName, Toast.LENGTH_SHORT).show();
+                // Finish the activity after successful attendance marking
+                finish();
             } else {
                 Toast.makeText(FoodstaffAttendanceScanner.this, "Error updating attendance", Toast.LENGTH_SHORT).show();
             }

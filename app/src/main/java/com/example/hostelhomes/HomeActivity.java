@@ -21,7 +21,7 @@ public class HomeActivity extends AppCompatActivity {
     private static final String TAG = "HomeActivity";
     private static final String PREFS_NAME = "LoginPrefs"; // Name for SharedPreferences
 
-    private LinearLayout rulesSection, foodScheduleSection, attendanceSection, requestsSection, complaintSection;
+    private LinearLayout rulesSection, foodScheduleSection, attendanceSection, requestsSection, complaintSection, qrcodeSection;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +49,7 @@ public class HomeActivity extends AppCompatActivity {
         attendanceSection = findViewById(R.id.foodAttendanceSection);
         requestsSection = findViewById(R.id.requestSection);
         complaintSection = findViewById(R.id.complaintSection);
+        qrcodeSection = findViewById(R.id.qrcodeSection);
 
         // Set click listeners
         rulesSection.setOnClickListener(new View.OnClickListener() {
@@ -87,6 +88,15 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i1 = new Intent(HomeActivity.this, Complaint.class);
+                i1.putExtra("ID", ID);
+                startActivity(i1);
+            }
+        });
+
+        qrcodeSection.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i1 = new Intent(HomeActivity.this, QrGenerate.class);
                 i1.putExtra("ID", ID);
                 startActivity(i1);
             }
