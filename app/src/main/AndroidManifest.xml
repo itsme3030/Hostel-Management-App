@@ -59,7 +59,7 @@
             android:name=".MaintenanceComplaint"
             android:exported="false" />
         <activity
-            android:name=".ViewMaintenanceComplaints"
+            android:name=".ViewMaintenanceComplaint"
             android:exported="false" />
         <activity
             android:name=".Complaint"

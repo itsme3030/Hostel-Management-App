@@ -53,7 +53,7 @@ import com.google.firebase.database.FirebaseDatabase;
                     String maintenanceComplaintId = databaseReference.push().getKey();
 
                     // Create a MaintenanceComplaint object with necessary data
-                    MaintenanceComplaintModel complaintModel = new MaintenanceComplaintModel(studentId, staffId, "maintenance", complaintText, "pending", timestamp);
+                    Model complaintModel = new Model(studentId, staffId, "maintenance", complaintText, "pending", timestamp);
 
                     // Store the complaint in Firebase under "maintenance_complaints" node
                     databaseReference.child(maintenanceComplaintId).setValue(complaintModel);
@@ -71,7 +71,8 @@ import com.google.firebase.database.FirebaseDatabase;
         btnViewComplaint.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //View List of complaint
+                Intent intent = new Intent(MaintenanceComplaint.this, ViewMaintenanceComplaint.class);
+                startActivity(intent);
             }
         });
     }
