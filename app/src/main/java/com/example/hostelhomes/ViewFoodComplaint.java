@@ -1,7 +1,6 @@
 package com.example.hostelhomes;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.ListView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
@@ -17,7 +16,7 @@ import java.util.List;
 public class ViewFoodComplaint extends AppCompatActivity {
 
     private ListView listView;
-    private FoodComplaintAdapter adapter;
+    private ComplaintAdapter adapter;
     private List<Model> complaintList;
     private DatabaseReference databaseReference;
 
@@ -45,7 +44,7 @@ public class ViewFoodComplaint extends AppCompatActivity {
                         complaintList.add(complaint);
                     }
                     // Set adapter to ListView
-                    adapter = new FoodComplaintAdapter(ViewFoodComplaint.this, complaintList);
+                    adapter = new ComplaintAdapter(ViewFoodComplaint.this, complaintList);
                     listView.setAdapter(adapter);
                 } else {
                     Toast.makeText(ViewFoodComplaint.this, "No complaints found", Toast.LENGTH_SHORT).show();
