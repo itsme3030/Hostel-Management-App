@@ -52,6 +52,9 @@
             android:name=".FoodComplaint"
             android:exported="false" />
         <activity
+            android:name=".ViewFoodComplaint"
+            android:exported="false" />
+        <activity
             android:name=".MaintainanceComplaint"
             android:exported="false" />
         <activity

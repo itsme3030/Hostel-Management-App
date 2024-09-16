@@ -15,7 +15,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class FoodComplaint extends AppCompatActivity {
 
     private EditText editTextComplaint;
-    private Button btnSendComplaint;
+    private Button btnSendComplaint,btnViewComplaint;
     private DatabaseReference databaseReference;
 
     @Override
@@ -30,9 +30,10 @@ public class FoodComplaint extends AppCompatActivity {
         // Initialize views
         editTextComplaint = findViewById(R.id.editText_food_complaint);
         btnSendComplaint = findViewById(R.id.btn_send_food_complaint);
+        btnViewComplaint = findViewById(R.id.btn_view_food_complaint);
 
         // Initialize Firebase reference for food complaints
-        databaseReference = FirebaseDatabase.getInstance().getReference("complaints/food_complaints");
+        databaseReference = FirebaseDatabase.getInstance().getReference("complaints/food_complaint");
 
         // Set up send button click listener
         btnSendComplaint.setOnClickListener(new View.OnClickListener() {
@@ -63,6 +64,15 @@ public class FoodComplaint extends AppCompatActivity {
                     // Show an error message if the complaint text is empty
                     Toast.makeText(FoodComplaint.this, "Please enter your complaint", Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+
+        btnViewComplaint.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(FoodComplaint.this, "btnViewComplaint", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(FoodComplaint.this, ViewFoodComplaint.class);
+                startActivity(intent);
             }
         });
     }
