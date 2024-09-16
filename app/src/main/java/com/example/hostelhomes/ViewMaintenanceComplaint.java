@@ -2,6 +2,7 @@ package com.example.hostelhomes;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -29,6 +30,10 @@ public class ViewMaintenanceComplaint extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_maintenance_complaint);
 
+        //Get id from intent
+        Intent intent = getIntent();
+        String studentId = intent.getStringExtra("ID");
+
         // Initialize ListView and list
         listView = findViewById(R.id.listView_maintenance_complaint);
         complaintList = new ArrayList<>();
@@ -44,7 +49,10 @@ public class ViewMaintenanceComplaint extends AppCompatActivity {
                     complaintList.clear();
                     for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                         Model complaint = snapshot.getValue(Model.class);
-                        complaintList.add(complaint);
+                        if (complaint != null && complaint.getStudentId().equals(studentId)) {
+                            // Add complaint to list if it belongs to the logged-in user
+                            complaintList.add(complaint);
+                        }
                     }
                     // Set adapter to ListView
                     adapter = new ComplaintAdapter(ViewMaintenanceComplaint.this, complaintList);

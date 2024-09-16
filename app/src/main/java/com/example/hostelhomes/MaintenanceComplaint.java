@@ -72,6 +72,7 @@ import com.google.firebase.database.FirebaseDatabase;
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MaintenanceComplaint.this, ViewMaintenanceComplaint.class);
+                intent.putExtra("ID", ID);
                 startActivity(intent);
             }
         });

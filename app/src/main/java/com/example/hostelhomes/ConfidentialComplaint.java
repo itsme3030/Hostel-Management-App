@@ -70,6 +70,7 @@ public class ConfidentialComplaint extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ConfidentialComplaint.this,ViewConfidentialComplaint.class);
+                intent.putExtra("ID", ID);
                 startActivity(intent);
             }
         });

@@ -71,6 +71,7 @@ public class FoodComplaint extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(FoodComplaint.this, ViewFoodComplaint.class);
+                intent.putExtra("ID", ID);
                 startActivity(intent);
             }
         });

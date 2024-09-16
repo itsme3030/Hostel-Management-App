@@ -113,6 +113,7 @@ public class HomeActivity extends AppCompatActivity {
 
                 // Clear login status in SharedPreferences
                 SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.clear();
                 editor.putBoolean("loggedIn", false);
                 editor.apply();
 
