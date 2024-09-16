@@ -15,7 +15,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class ConfidentialComplaint extends AppCompatActivity {
 
     private EditText editTextComplaint;
-    private Button btnSendComplaint;
+    private Button btnSendComplaint,btnViewComplaint;
     private DatabaseReference databaseReference;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +29,7 @@ public class ConfidentialComplaint extends AppCompatActivity {
         // Initialize views
         editTextComplaint = findViewById(R.id.editText_confidential_complaint);
         btnSendComplaint = findViewById(R.id.btn_send_confidential_complaint);
+        btnViewComplaint = findViewById(R.id.btn_view_confidential_complaint);
 
         // Initialize Firebase reference for confidential complaints
         databaseReference = FirebaseDatabase.getInstance().getReference("complaints/confidential_complaint");
@@ -50,7 +51,7 @@ public class ConfidentialComplaint extends AppCompatActivity {
                     String confidentialComplaintId = databaseReference.push().getKey();
 
                     // Create a ConfidentialComplaintModel object with necessary data
-                    ConfidentialComplaintModel complaintModel = new ConfidentialComplaintModel(studentId, staffId, "supervisor", complaintText, "pending", timestamp);
+                    Model complaintModel = new Model(studentId, staffId, "supervisor", complaintText, "pending", timestamp);
 
                     // Store the complaint in Firebase under "confidential_complaints" node
                     databaseReference.child(confidentialComplaintId).setValue(complaintModel);
@@ -62,6 +63,14 @@ public class ConfidentialComplaint extends AppCompatActivity {
                     // Show an error message if the complaint text is empty
                     Toast.makeText(ConfidentialComplaint.this, "Please enter your report", Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+
+        btnViewComplaint.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ConfidentialComplaint.this,ViewConfidentialComplaint.class);
+                startActivity(intent);
             }
         });
     }
