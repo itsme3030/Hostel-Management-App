@@ -44,8 +44,13 @@ public class Foodstaffhomeactivity extends AppCompatActivity {
             }
         });
 
-
-
+        complaintSection.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Foodstaffhomeactivity.this, ViewFoodComplaint.class);
+                startActivity(intent);
+            }
+        });
 
 
         // Set up logout button
