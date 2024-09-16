@@ -1,6 +1,6 @@
 package com.example.hostelhomes;
 
-public class FoodComplaintModel {
+public class Model {
 
     private String studentId;
     private String staffId;
@@ -10,10 +10,10 @@ public class FoodComplaintModel {
     private long timestamp;
 
     // Default constructor for Firebase
-    public FoodComplaintModel() {}
+    public Model() {}
 
     // Constructor with parameters
-    public FoodComplaintModel(String studentId, String staffId, String department, String complaintText, String status, long timestamp) {
+    public Model(String studentId, String staffId, String department, String complaintText, String status, long timestamp) {
         this.studentId = studentId;
         this.staffId = staffId;
         this.department = department;

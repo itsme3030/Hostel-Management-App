@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HostelHomes"
         tools:targetApi="31">
+
         <activity
             android:name=".FoodAttendance"
             android:exported="false" />
@@ -56,6 +57,9 @@
             android:exported="false" />
         <activity
             android:name=".MaintenanceComplaint"
+            android:exported="false" />
+        <activity
+            android:name=".ViewMaintenanceComplaints"
             android:exported="false" />
         <activity
             android:name=".Complaint"

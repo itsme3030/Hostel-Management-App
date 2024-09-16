@@ -11,12 +11,12 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
-public class FoodComplaintAdapter extends ArrayAdapter<FoodComplaintModel> {
+public class FoodComplaintAdapter extends ArrayAdapter<Model> {
 
     private Context context;
-    private List<FoodComplaintModel> complaintList;
+    private List<Model> complaintList;
 
-    public FoodComplaintAdapter(Context context, List<FoodComplaintModel> complaintList) {
+    public FoodComplaintAdapter(Context context, List<Model> complaintList) {
         super(context, 0, complaintList);
         this.context = context;
         this.complaintList = complaintList;
@@ -25,11 +25,11 @@ public class FoodComplaintAdapter extends ArrayAdapter<FoodComplaintModel> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         // Get the complaint for this position
-        FoodComplaintModel complaint = getItem(position);
+        Model complaint = getItem(position);
 
         // Check if an existing view is being reused, otherwise inflate the view
         if (convertView == null) {
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_food_complaint, parent, false);
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_complaint, parent, false);
         }
 
         // Lookup view for data population

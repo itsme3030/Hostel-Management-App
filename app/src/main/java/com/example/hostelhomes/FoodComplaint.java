@@ -52,7 +52,7 @@ public class FoodComplaint extends AppCompatActivity {
                     String foodComplaintId = databaseReference.push().getKey();
 
                     // Create a FoodComplaintModel object with necessary data
-                    FoodComplaintModel complaintModel = new FoodComplaintModel(studentId, staffId, "food", complaintText, "pending", timestamp);
+                    Model complaintModel = new Model(studentId, staffId, "food", complaintText, "pending", timestamp);
 
                     // Store the complaint in Firebase under "food_complaints" node
                     databaseReference.child(foodComplaintId).setValue(complaintModel);
@@ -70,7 +70,6 @@ public class FoodComplaint extends AppCompatActivity {
         btnViewComplaint.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(FoodComplaint.this, "btnViewComplaint", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(FoodComplaint.this, ViewFoodComplaint.class);
                 startActivity(intent);
             }

@@ -18,7 +18,7 @@ public class ViewFoodComplaint extends AppCompatActivity {
 
     private ListView listView;
     private FoodComplaintAdapter adapter;
-    private List<FoodComplaintModel> complaintList;
+    private List<Model> complaintList;
     private DatabaseReference databaseReference;
 
     @Override
@@ -32,17 +32,16 @@ public class ViewFoodComplaint extends AppCompatActivity {
 
         // Initialize Firebase reference
         databaseReference = FirebaseDatabase.getInstance().getReference("complaints/food_complaint");
-        Log.d("dbref", "db ref");
 
         // Fetch complaints from Firebase
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
-                    Log.d("dataSnapshot is exist", "onDataChange: ");
+//                    Log.d("onDataChange: ", "dataSnapshot is exist");
                     complaintList.clear();
                     for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                        FoodComplaintModel complaint = snapshot.getValue(FoodComplaintModel.class);
+                        Model complaint = snapshot.getValue(Model.class);
                         complaintList.add(complaint);
                     }
                     // Set adapter to ListView
