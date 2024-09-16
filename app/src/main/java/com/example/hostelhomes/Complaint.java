@@ -24,7 +24,7 @@ public class Complaint extends AppCompatActivity {
         btnMaintenance.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Complaint.this, MaintainanceComplaint.class);
+                Intent intent = new Intent(Complaint.this, MaintenanceComplaint.class);
                 intent.putExtra("ID",ID);
                 startActivity(intent);
             }

@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
                     intent = new Intent(MainActivity.this, Foodstaffhomeactivity.class);
                     break;
                 case "maintenance staff":
-                    intent = new Intent(MainActivity.this, Maintainancestaffhomeactivity.class);
+                    intent = new Intent(MainActivity.this, Maintenancestaffhomeactivity.class);
                     break;
                 case "supervisor":
                     intent = new Intent(MainActivity.this, Supervisorhomeactivity.class);
@@ -132,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
                                     intent = new Intent(MainActivity.this, Foodstaffhomeactivity.class);
                                     break;
                                 case "maintenance staff":
-                                    intent = new Intent(MainActivity.this, Maintainancestaffhomeactivity.class);
+                                    intent = new Intent(MainActivity.this, Maintenancestaffhomeactivity.class);
                                     break;
                                 case "supervisor":
                                     intent = new Intent(MainActivity.this, Supervisorhomeactivity.class);

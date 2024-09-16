@@ -34,7 +34,7 @@
             android:name=".Supervisorhomeactivity"
             android:exported="false" />
         <activity
-            android:name=".Maintainancestaffhomeactivity"
+            android:name=".Maintenancestaffhomeactivity"
             android:exported="false" />
         <activity
             android:name=".Foodstaffhomeactivity"
@@ -55,7 +55,7 @@
             android:name=".ViewFoodComplaint"
             android:exported="false" />
         <activity
-            android:name=".MaintainanceComplaint"
+            android:name=".MaintenanceComplaint"
             android:exported="false" />
         <activity
             android:name=".Complaint"

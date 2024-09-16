@@ -1,7 +1,6 @@
 package com.example.hostelhomes;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -12,24 +11,25 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-    public class MaintainanceComplaint extends AppCompatActivity {
+    public class MaintenanceComplaint extends AppCompatActivity {
 
     private EditText editTextComplaint;
-    private Button btnSendComplaint;
+    private Button btnSendComplaint,btnViewComplaint;
     private DatabaseReference databaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_maintainance_complaint);
+        setContentView(R.layout.activity_maintenance_complaint);
 
         // Get the username from the intent
         Intent intent = getIntent();
         String ID = intent.getStringExtra("ID");
-
+//maintenance
         // Initialize views
         editTextComplaint = findViewById(R.id.editText_maintenance_complaint);
         btnSendComplaint = findViewById(R.id.btn_send_maintenance_complaint);
+        btnViewComplaint = findViewById(R.id.btn_view_maintenance_complaint);
 
         // Initialize Firebase reference (complaints node)
         databaseReference = FirebaseDatabase.getInstance().getReference("complaints/maintainance_complaint");
@@ -59,12 +59,19 @@ import com.google.firebase.database.FirebaseDatabase;
                     databaseReference.child(maintenanceComplaintId).setValue(complaintModel);
 
                     // Show success message and clear the input
-                    Toast.makeText(MaintainanceComplaint.this, "Complaint Sent", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MaintenanceComplaint.this, "Complaint Sent", Toast.LENGTH_SHORT).show();
                     editTextComplaint.setText("");  // Clear the input field
                 } else {
                     // Show an error message if the complaint text is empty
-                    Toast.makeText(MaintainanceComplaint.this, "Please enter your complaint", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MaintenanceComplaint.this, "Please enter your complaint", Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+
+        btnViewComplaint.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //View List of complaint
             }
         });
     }
