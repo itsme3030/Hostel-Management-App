@@ -21,6 +21,7 @@
                 android:layout_height="wrap_content"
                 android:text="Hostel Rules"
                 android:textSize="40sp"
+                android:textColor="@color/black"
                 android:textStyle="bold"
                 android:layout_gravity="top"
                 android:paddingBottom="15dp"/>
@@ -30,7 +31,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1. Maintain cleanliness in rooms and common areas."
-                android:textSize="20sp"
+                android:textSize="15sp"
+                android:textColor="@color/black"
                 android:textStyle="bold"
                 android:padding="8dp"/>
 
@@ -39,7 +41,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="2. No loud noise after 10:00 PM."
-                android:textSize="20sp"
+                android:textSize="15sp"
+                android:textColor="@color/black"
                 android:textStyle="bold"
                 android:padding="8dp"/>
 
@@ -48,7 +51,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="3. Visitors are allowed only in common areas."
-                android:textSize="20sp"
+                android:textSize="15sp"
+                android:textColor="@color/black"
                 android:textStyle="bold"
                 android:padding="8dp"/>
 
@@ -57,7 +61,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="4. No smoking or alcohol inside the hostel."
-                android:textSize="20sp"
+                android:textSize="15sp"
+                android:textColor="@color/black"
                 android:textStyle="bold"
                 android:padding="8dp"/>
 
@@ -66,7 +71,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="5. Adhere to hostel curfew timings."
-                android:textSize="20sp"
+                android:textSize="15sp"
+                android:textColor="@color/black"
                 android:textStyle="bold"
                 android:padding="8dp"/>
 
@@ -75,7 +81,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="6. Respect other students' privacy and belongings."
-                android:textSize="20sp"
+                android:textSize="15sp"
+                android:textColor="@color/black"
                 android:textStyle="bold"
                 android:padding="8dp"/>
 
@@ -84,7 +91,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="7. Report any maintenance issues immediately."
-                android:textSize="20sp"
+                android:textSize="15sp"
+                android:textColor="@color/black"
                 android:textStyle="bold"
                 android:padding="8dp"/>
 
@@ -93,7 +101,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="8. No illegal activities will be tolerated."
-                android:textSize="20sp"
+                android:textSize="15sp"
+                android:textColor="@color/black"
                 android:textStyle="bold"
                 android:padding="8dp"/>
 
@@ -102,7 +111,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="9. Keep valuables secured; the hostel is not responsible for losses."
-                android:textSize="20sp"
+                android:textSize="15sp"
+                android:textColor="@color/black"
                 android:textStyle="bold"
                 android:padding="8dp"/>
 
@@ -111,7 +121,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="10. Follow all safety protocols during emergencies."
-                android:textSize="20sp"
+                android:textSize="15sp"
+                android:textColor="@color/black"
                 android:textStyle="bold"
                 android:padding="8dp"/>
 
@@ -125,7 +136,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:background="#F44336"
-        android:layout_below="@+id/rulesScrollView"
+        android:layout_alignParentBottom="true"
         android:padding="5dp"
         android:text="Back"
         android:textColor="#FFFFFF"
