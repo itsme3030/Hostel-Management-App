@@ -26,6 +26,10 @@ public class Supervisorhomeactivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_supervisorhomeactivity);
 
+        //Get id from intent
+        Intent intent = getIntent();
+        String ID = intent.getStringExtra("ID");
+
         complaintSection = findViewById(R.id.complaintSection);
 
         // Set up logout button
@@ -54,6 +58,7 @@ public class Supervisorhomeactivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Supervisorhomeactivity.this, ViewConfidentialComplaint.class);
+                intent.putExtra("ID", ID);
                 startActivity(intent);
             }
         });

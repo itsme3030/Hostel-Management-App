@@ -36,12 +36,12 @@ public class HomeActivity extends AppCompatActivity {
         String uname = intent.getStringExtra("uname");
         String ID = intent.getStringExtra("ID");
 
-        Log.d(TAG, "Received in HomeActivity - Username: " + uname + ", ID: " + ID);  // Debugging log
+        //Log.d(TAG, "Received in HomeActivity - Username: " + uname + ", ID: " + ID);  // Debugging log
 
         tvUserName = findViewById(R.id.tvUserName);
 
         // Set the UserName and ID in the UI
-        tvUserName.setText("Welcome " + uname);
+        tvUserName.setText("Welcome " + uname + ":" + ID);
 
         // Initialize UI elements
         rulesSection = findViewById(R.id.rulesSection);

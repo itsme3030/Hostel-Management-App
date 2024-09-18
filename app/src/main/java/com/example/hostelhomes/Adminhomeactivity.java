@@ -22,6 +22,9 @@ public class Adminhomeactivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_adminhomeactivity);
 
+        //Get id from intent
+        Intent intent = getIntent();
+        String ID = intent.getStringExtra("ID");
 
         // Set up logout button
         sharedPreferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);

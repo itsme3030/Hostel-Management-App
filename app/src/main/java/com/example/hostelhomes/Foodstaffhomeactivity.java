@@ -24,6 +24,10 @@ public class Foodstaffhomeactivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_foodstaffhomeactivity);
 
+        //Get id from intent
+        Intent intent = getIntent();
+        String ID = intent.getStringExtra("ID");
+
         foodScheduleSection = findViewById(R.id.foodScheduleSection);
         complaintSection = findViewById(R.id.complaintSection);
         foodAttendanceSection = findViewById(R.id.foodAttendanceSection);
@@ -48,6 +52,7 @@ public class Foodstaffhomeactivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Foodstaffhomeactivity.this, ViewFoodComplaint.class);
+                intent.putExtra("ID", ID);
                 startActivity(intent);
             }
         });

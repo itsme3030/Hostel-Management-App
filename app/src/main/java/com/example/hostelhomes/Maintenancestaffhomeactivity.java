@@ -23,6 +23,10 @@ public class Maintenancestaffhomeactivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_maintenancestaffhomeactivity);
 
+        //Get id from intent
+        Intent intent = getIntent();
+        String ID = intent.getStringExtra("ID");
+
         complaintSection = findViewById(R.id.complaintSection);
 
         // Set up logout button
@@ -51,6 +55,7 @@ public class Maintenancestaffhomeactivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Maintenancestaffhomeactivity.this, ViewMaintenanceComplaint.class);
+                intent.putExtra("ID", ID);
                 startActivity(intent);
             }
         });
