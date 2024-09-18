@@ -32,7 +32,8 @@ public class ViewMaintenanceComplaint extends AppCompatActivity {
 
         //Get id from intent
         Intent intent = getIntent();
-        String studentId = intent.getStringExtra("ID");
+        String UserId = intent.getStringExtra("ID");
+        String MaintenancestaffId = "MS1";
 
         // Initialize ListView and list
         listView = findViewById(R.id.listView_maintenance_complaint);
@@ -49,9 +50,18 @@ public class ViewMaintenanceComplaint extends AppCompatActivity {
                     complaintList.clear();
                     for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                         Model complaint = snapshot.getValue(Model.class);
-                        if (complaint != null && complaint.getStudentId().equals(studentId)) {
-                            // Add complaint to list if it belongs to the logged-in user
-                            complaintList.add(complaint);
+
+                        if (complaint != null) {
+                            // Check if the user is a food staff (FS1)
+                            if (MaintenancestaffId != null && MaintenancestaffId.equals(UserId)) {
+                                // Add all complaints for food staff
+                                complaintList.add(complaint);
+                            }
+                            // Check if the user is a student
+                            else if (complaint.getStudentId().equals(UserId)) {
+                                // Add complaint to list if it belongs to the logged-in student
+                                complaintList.add(complaint);
+                            }
                         }
                     }
                     // Set adapter to ListView

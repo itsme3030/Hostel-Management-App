@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -19,6 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class ViewFoodComplaint extends AppCompatActivity {
 
@@ -34,8 +36,8 @@ public class ViewFoodComplaint extends AppCompatActivity {
 
         //Get id from intent
         Intent intent = getIntent();
-        String studentId = intent.getStringExtra("ID");
-
+        String UserId = intent.getStringExtra("ID");
+        String FoodstaffId = "FS1";
 
         // Initialize ListView and list
         listView = findViewById(R.id.listView_food_complaints);
@@ -52,11 +54,21 @@ public class ViewFoodComplaint extends AppCompatActivity {
                     complaintList.clear();
                     for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                         Model complaint = snapshot.getValue(Model.class);
-                        if (complaint != null && complaint.getStudentId().equals(studentId)) {
-                            // Add complaint to list if it belongs to the logged-in user
-                            complaintList.add(complaint);
+
+                        if (complaint != null) {
+                            // Check if the user is a food staff (FS1)
+                            if (FoodstaffId != null && FoodstaffId.equals(UserId)) {
+                                // Add all complaints for food staff
+                                complaintList.add(complaint);
+                            }
+                            // Check if the user is a student
+                            else if (complaint.getStudentId().equals(UserId)) {
+                                // Add complaint to list if it belongs to the logged-in student
+                                complaintList.add(complaint);
+                            }
                         }
                     }
+
                     // Set adapter to ListView
                     adapter = new ComplaintAdapter(ViewFoodComplaint.this, complaintList);
                     listView.setAdapter(adapter);
