@@ -1,6 +1,9 @@
 package com.example.hostelhomes;
 
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.CalendarView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -28,6 +31,7 @@ public class FoodAttendance extends AppCompatActivity {
 
         calendarView = findViewById(R.id.calendarView);
         attendanceDetails = findViewById(R.id.attendanceDetails);
+
 
         // Fetch the student ID passed via Intent
         String studentID = getIntent().getStringExtra("ID");
