@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -15,6 +16,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class Adminhomeactivity extends AppCompatActivity {
     SharedPreferences sharedPreferences;
+    LinearLayout addUser;
     private static final String PREFS_NAME = "LoginPrefs";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +27,15 @@ public class Adminhomeactivity extends AppCompatActivity {
         //Get id from intent
         Intent intent = getIntent();
         String ID = intent.getStringExtra("ID");
+        addUser = (LinearLayout) findViewById(R.id.AddUser);
+
+        addUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i1 = new Intent(Adminhomeactivity.this, AddUserActivity.class);
+                startActivity(i1);
+            }
+        });
 
         // Set up logout button
         sharedPreferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
